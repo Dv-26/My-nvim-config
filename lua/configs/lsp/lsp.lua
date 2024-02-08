@@ -1,0 +1,44 @@
+require("mason").setup({
+  ui = {
+      icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗"
+      }
+  }
+})
+
+require("mason-lspconfig").setup({
+  -- 确保安装，根据需要填写
+  ensure_installed = {
+    "lua_ls",
+    "clangd",
+  },
+  github = {
+      download_url_template = "https://hub.nuaa.cf/%s/releases/download/%s/%s",
+  },
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require("lspconfig").lua_ls.setup {
+  capabilities = capabilities,
+}
+
+require("lspconfig").clangd.setup {
+  capabilities = capabilities,
+}
+
+-- require("lspconfig").verible.setup {
+--   capabilities = capabilities,
+-- }
+
+require("lspconfig").hdl_checker.setup {
+  capabilities = capabilities,
+}
+
+require("lspconfig").matlab_ls.setup {
+  capabilities = capabilities,
+}
+
+
