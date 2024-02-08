@@ -1,9 +1,10 @@
 require("core.settings")
 require("core.keymaps")
 
+vim.cmd("set t_Co=256")
+vim.cmd("colorscheme elflord")
 vim.cmd("set background=dark")
-vim.cmd("colorscheme torte")
-require("configs.themes.nightfox").config()
+-- require("configs.themes.nightfox").config()
 -- require("configs.themes.kanagawa").config()
 -- require("configs.themes.tokyonight").config()
 
